@@ -17,11 +17,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
+        <spring.version>5.3.3</spring.version>
     </properties>
 
     <dependencies>
 
-<!--Template engine-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+        <!--Template engine-->
         <dependency>
             <groupId>org.sitemesh</groupId>
             <artifactId>sitemesh</artifactId>
@@ -53,8 +67,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.11</version>
         </dependency>
-
-
         <!-- resize images-->
         <dependency>
             <groupId>net.coobird</groupId>

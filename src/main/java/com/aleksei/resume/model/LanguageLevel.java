@@ -20,5 +20,4 @@ public enum LanguageLevel {
     public String getDbValue() {
         return name().toLowerCase();
     }
-
 }
