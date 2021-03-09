@@ -1,6 +1,8 @@
 package com.aleksei.resume.controller;
 
-import com.aleksei.resume.service.NameService;
+import com.aleksei.resume.entity.Profile;
+import com.aleksei.resume.entity.ProfileRestore;
+import com.aleksei.resume.repository.storage.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,12 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PublicDataController {
 
     @Autowired
-    private NameService nameService;
+    private ProfileRepository profileRepository;
 
     @RequestMapping(value = "/{uid}", method = RequestMethod.GET)
     public String getProfile(@PathVariable("uid") String uid, Model model) {
-        String fullName = nameService.convertName(uid);
-        model.addAttribute("fullName", fullName);
+        Profile profile = profileRepository.findByUid(uid);
+        if (profile == null) {
+            return "profile_not_profile";
+        }
+        model.addAttribute("profile", profile);
         return "profile";
     }
 

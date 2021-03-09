@@ -2,12 +2,13 @@
 
 
 <div class="panel panel-primary">
-    <a href="/edit"><img src="media/avatar/1e29155f-41c5-4e34-a4bc-9e9e7825d076.jpg" class="img-responsive photo" alt="photo"/></a>
+    <a href="/edit"><img class="img-responsive photo" src="${profile.largePhoto}" alt="photo"></a>
     <h1 class="text-center">
-        <a style="color: black;" href="/edit">${fullName}</a>
+        <a style="color: black;" href="/edit">${profile.fullName}</a>
     </h1>
     <h6 class="text-center">
-        <strong>Yekaterinburg Russia</strong>
+<%--        <strong>Yekaterinburg Russia</strong>--%>
+        <strong>${profile.city}<strong> </strong>${profile.country}</strong>
     </h6>
     <h6 class="text-center">
         <strong>Age:</strong> 31, <strong>Birthday: </strong> Feb 26, 1989

@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,9 +15,11 @@ import javax.persistence.Table;
 @Setter
 @Table(name = "skill_category")
 public class SkillCategory extends AbstractEntity<Long> {
+
     private static final long serialVersionUID = -8959739023562086833L;
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Column(nullable = false, length = 50)
